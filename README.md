@@ -24,10 +24,11 @@ Table of Contents:
       http://127.0.0.1:8000 to access website home page
 
      docker links:
+     
      Docker repsository image link: https://hub.docker.com/repository/docker/wescoder2024/rockband/general
       Docker playground link: https://labs.play-with-docker.com/
 
-  5. Usage guide:
+  6. Usage guide:
      home page:
      ![Screenshot (41)](https://github.com/wescoder2024/Capstone/assets/167479161/2feb1bd2-4d4e-4b7f-aa2b-178f2c7b4ef3)
 
