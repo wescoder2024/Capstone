@@ -16,19 +16,26 @@ class Postdetail(generic.DetailView):
     template_name="post.html"
 
 def index(request):
+    """This function shows the question poll"""
+
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     return render(request, "polls/poll.html", context)
 
 def detail(request, question_id):
+    """this function shows the answer choices relevant to each question"""
+
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
 def results(request, question_id):
+    """This function shows tally of votes for each answer for a particular question"""
+
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
 
 def vote(request, question_id):
+    """This function tallies all the votes for each answer for a particular question"""
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(
@@ -48,10 +55,14 @@ def vote(request, question_id):
 
 # Send user to login page
 def user_login(request):
+    """this function shows the login page"""
+
     return render(request, 'authentication/login.html')
 
 # Check to see if user login details are correct
 def authenticate_user(request):
+    """this function checks to to see if user details are correct"""
+
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
@@ -65,8 +76,10 @@ def authenticate_user(request):
             reverse('rockband:show_user')
         )
 
-# Show user.html page when login is successful
+# Show user.html page when login or registration is successful
 def show_user(request):
+    """This function shows a user.html page when login is successful"""
+
     print(request.user.username)
     return render(request, 'authentication/user.html', {
         "username": request.user.username,
@@ -75,10 +88,14 @@ def show_user(request):
 
 # user registration page
 def register(request):
+    """this function shows the user registration page"""
+
     return render(request, 'authentication/register.html')
 
 # User registration process
 def register_user(request):
+    """this function is the user registration process"""
+
     username= request.POST['username']
     password= request.POST['password']
 
