@@ -10,7 +10,7 @@ Welcome to rockband's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-	modules
+    modules
 
 Indices and tables
 ==================
