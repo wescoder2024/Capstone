@@ -22,7 +22,14 @@ Table of Contents:
       python manage.py runserver(Make sure you are in the directory as manage.py)
      Online port:
       http://127.0.0.1:8000 to access website home page
-
+ 
+      Docker installation and run:
+      Install docker desktop to run containers on the desktop.
+      Once installed, go to the directory where your docker file is located(Usually .docker file) and run a command prompt from that directory.
+      run command: docker build -t rockband ./ to build the docker image.
+      run command: docker run -dp 80:80 rockband to run the docker image.
+      type http://localhost(numeric):8000 in browser and the website should run in the browser.
+      
      docker links:
      
      Docker repsository image link: https://hub.docker.com/repository/docker/wescoder2024/rockband/general
